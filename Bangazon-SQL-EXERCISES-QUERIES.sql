@@ -100,7 +100,18 @@
 --WHERE c.DecomissionDate IS NULL;
 
 --number 16
-select Concat(Manufacturer, ' ', Make) as ComputerInfo
-from Computer
-where purchaseDate < CONVERT(datetime,'2019-07-01') and DecomissionDate is NULL
+--select Concat(Manufacturer, ' ', Make) as ComputerInfo
+--from Computer
+--where purchaseDate < CONVERT(datetime,'2019-07-01') and DecomissionDate is NULL
+
+--number 17
+--SELECT CONCAT(e.FirstName, ' ', e.LastName) as FullName, COUNT(c.Id) as ComputerCount
+--FROM Employee e
+--LEFT JOIN ComputerEmployee ce 
+--ON e.Id = ce.EmployeeId 
+--left join Computer c
+--ON ce.ComputerId = c.Id 
+--GROUP BY e.FirstName, e.LastName;
+
+--number 18
 
