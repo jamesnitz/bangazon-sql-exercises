@@ -58,4 +58,34 @@
 --WHERE StartDate > GETDATE()
 --Order BY StartDate 
 
+--number 11
+--INSERT INTO EmployeeTraining(EmployeeId, TrainingProgramId)
+--VALUES(20, 5)
+--INSERT INTO EmployeeTraining(EmployeeId, TrainingProgramId)
+--VALUES(21, 5)
+--INSERT INTO EmployeeTraining(EmployeeId, TrainingProgramId)
+--VALUES(22, 5)
 
+
+--number 12 
+--SELECT TOP 3 t.[Name], Count(et.EmployeeId)
+--FROM TrainingProgram t
+--LEFT JOIN EmployeeTraining et
+--ON et.TrainingProgramId = t.Id
+--GROUP BY t.Id, Name
+--ORDER BY COUNT(et.EmployeeId) desc;
+
+----number 13
+--SELECT TOP 3 t.[Name], Count(et.EmployeeId)
+--FROM TrainingProgram t
+--LEFT JOIN EmployeeTraining et
+--ON et.TrainingProgramId = t.Id
+--GROUP BY Name
+--ORDER BY COUNT(et.EmployeeId) desc;
+
+--number 14
+SELECT CONCAT(e.FirstName, ' ', e.LastName) as FullName
+FROM Employee e
+LEFT JOIN ComputerEmployee c
+ON c.EmployeeId = e.Id
+WHERE c.ComputerId IS NULL;
