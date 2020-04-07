@@ -84,8 +84,23 @@
 --ORDER BY COUNT(et.EmployeeId) desc;
 
 --number 14
-SELECT CONCAT(e.FirstName, ' ', e.LastName) as FullName
-FROM Employee e
-LEFT JOIN ComputerEmployee c
-ON c.EmployeeId = e.Id
-WHERE c.ComputerId IS NULL;
+--SELECT CONCAT(e.FirstName, ' ', e.LastName) as FullName
+--FROM Employee e
+--LEFT JOIN ComputerEmployee c
+--ON c.EmployeeId = e.Id
+--WHERE c.ComputerId IS NULL;
+
+--number 15
+--SELECT CONCAT(e.FirstName, ' ', e.LastName) as FullName, Coalesce((c.Manufacturer + ' ' + c.Make), 'N/A') as ComputerInfo
+--FROM Employee e
+--LEFT JOIN ComputerEmployee ce
+--ON ce.EmployeeId = e.Id
+--LEFT JOIN Computer c
+--ON ce.ComputerId = c.Id
+--WHERE c.DecomissionDate IS NULL;
+
+--number 16
+select Concat(Manufacturer, ' ', Make) as ComputerInfo
+from Computer
+where purchaseDate < CONVERT(datetime,'2019-07-01') and DecomissionDate is NULL
+
