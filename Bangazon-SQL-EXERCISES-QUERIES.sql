@@ -44,3 +44,18 @@
 --ON et.TrainingProgramId = t.Id
 --GROUP BY Name
 
+--number 9
+--SELECT t.[Name]
+--FROM TrainingProgram t
+--LEFT JOIN EmployeeTraining et
+--ON et.TrainingProgramId = t.Id
+--GROUP BY Name, MaxAttendees
+--HAVING Count(et.EmployeeId) = t.MaxAttendees
+
+--number 10
+--SELECT t.[Name], t.StartDate
+--FROM TrainingProgram t
+--WHERE StartDate > GETDATE()
+--Order BY StartDate 
+
+
