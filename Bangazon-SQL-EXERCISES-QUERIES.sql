@@ -114,4 +114,47 @@
 --GROUP BY e.FirstName, e.LastName;
 
 --number 18
+--select pt.Name, Count(c.Id) as Count
+--FROM PaymentType pt
+--LEFT JOIN Customer c
+--ON c.Id = pt.CustomerId
+--GROUP BY pt.name
 
+--number 19
+--SELECT TOP 10 p.Title, p.Price, CONCAT(c.FirstName, ' ', c.LastName) as seller
+--FROM Product p
+--LEFT JOIN Customer c
+--ON p.CustomerId = c.Id
+--ORDER BY Price desc;
+
+--number 20
+--SELECT TOP 10 p.Title, p.Price, CONCAT(c.FirstName, ' ', c.LastName) as seller
+--FROM Product p
+--LEFT JOIN Customer c
+--ON p.CustomerId = c.Id
+--LEFT JOIN OrderProduct op
+--ON op.ProductId = p.Id
+--GROUP BY p.Title, P.Price, C.LastName, c.FirstName
+--ORDER BY Count(op.ProductId) desc;
+
+--number 21
+--SELECT TOP 1 CONCAT(c.FirstName, ' ', c.LastName) as topConsumer
+--FROM [Order] o
+--LEFT JOIN Customer c
+--ON o.CustomerId = c.Id
+--LEFT JOIN OrderProduct op
+--ON op.OrderId = o.Id
+--GROUP BY C.LastName, c.FirstName
+--ORDER BY Count(op.ProductId) desc;
+
+--number 22
+--select pt.name, Count(p.Id) as Sales 
+--FROM ProductType pt
+--left join Product p
+--ON p.ProductTypeId = pt.Id
+--LEFT JOIN OrderProduct op
+--ON op.ProductId = p.Id
+--GROUP BY pt.Name
+
+
+--number 23
