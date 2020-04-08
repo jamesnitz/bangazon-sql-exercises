@@ -154,7 +154,15 @@
 --ON p.ProductTypeId = pt.Id
 --LEFT JOIN OrderProduct op
 --ON op.ProductId = p.Id
---GROUP BY pt.Name
+--GROUP BY pt.Name;
 
 
 --number 23
+SELECT CONCAT(c.FirstName, c.LastName) as FULLNAME, COALESCE(SUM(p.Price),0) as TOTAL
+FROM Customer c
+LEFT JOIN Product p
+ON p.CustomerId = c.Id
+LEFT JOIN OrderProduct op
+ON p.Id = op.ProductId
+GROUP BY c.LastName, c.FirstName
+ORDER BY SUM(p.Price) desc;
